@@ -5,97 +5,232 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Top Three Local | Be one of the first three on Google</title>
 <meta name="description" content="We fix and keep up your Google Business Profile so the next customer in your town calls you. Start with a free profile check.">
+<meta property="og:title" content="Top Three Local | Be one of the first three on Google">
+<meta property="og:description" content="Google shows three businesses in the map box. Most calls go to them. We get you in it.">
+<meta name="theme-color" content="#0f1b33">
 <style>
-  :root{--ink:#14213d;--soft:#4b5563;--line:#e5e7eb;--gold:#fca311;--bg:#ffffff;--pale:#f6f7fb;}
+  :root{--navy:#0f1b33;--navy2:#16294d;--ink:#14213d;--soft:#53607a;--line:#e3e7ef;--gold:#fca311;--gold2:#ffd27a;--pale:#f5f7fb;--green:#12935a;--red:#d64545;}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Inter","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
-  header{padding:20px 0;border-bottom:1px solid var(--line)}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
+  .cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--gold);color:var(--navy);font-weight:800;padding:0 26px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit;box-shadow:0 8px 20px rgba(252,163,17,.35);transition:transform .15s}
+  .cta:hover{transform:translateY(-1px)}
+  .ghost{display:inline-flex;align-items:center;min-height:48px;color:#fff;font-weight:700;text-decoration:none;padding:0 6px}
+
+  /* header + hero */
+  .top{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .top:before{content:"";position:absolute;right:-180px;top:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(252,163,17,.22),transparent 65%)}
+  header{padding:18px 0;position:relative}
   header .wrap{display:flex;align-items:center;justify-content:space-between}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:.2px}
-  .logo i{display:inline-grid;grid-template-columns:repeat(3,8px);gap:3px}
-  .logo i b{display:block;width:8px;height:8px;border-radius:2px;background:var(--gold)}
-  .logo i b:nth-child(n+4){background:#cbd5e1}
-  .cta{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;padding:13px 22px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
-  .cta:hover{filter:brightness(.96)}
-  .hero{padding:64px 0 48px}
-  .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.12;max-width:680px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem}
+  .logo i{display:inline-grid;grid-template-columns:repeat(3,9px);gap:3px}
+  .logo i b{display:block;width:9px;height:9px;border-radius:2px;background:var(--gold)}
+  .logo i b:nth-child(n+4){background:#3b4f78}
+  .hero{padding:34px 0 64px;position:relative}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+  .kicker{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.08;letter-spacing:-.02em}
   .hero h1 em{font-style:normal;color:var(--gold)}
-  .hero p{font-size:1.15rem;color:var(--soft);max-width:600px;margin:18px 0 26px}
-  .maps{margin:34px 0 0;max-width:520px;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(20,33,61,.08)}
-  .maps .bar{background:var(--pale);padding:10px 14px;font-size:.85rem;color:var(--soft);border-bottom:1px solid var(--line)}
-  .row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);font-size:.95rem}
-  .row:last-child{border:0}
-  .row .n{font-weight:700}
-  .row .s{color:var(--soft);font-size:.85rem}
-  .row.you{background:#fff8e6}
-  .row .tag{font-size:.75rem;background:var(--gold);padding:2px 8px;border-radius:20px;font-weight:700}
-  .row .grey{color:#9ca3af;font-size:.8rem}
-  section{padding:56px 0}
+  .hero p{font-size:1.15rem;color:#c9d3e8;margin:20px 0 28px;max-width:540px}
+  .hero .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .proofline{margin-top:26px;font-size:.92rem;color:#9fb0d0}
+  .proofline b{color:#fff}
+
+  /* phone mock */
+  .phone{background:#fff;color:var(--ink);border-radius:26px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.35);max-width:380px;margin-left:auto;width:100%}
+  .search{display:flex;align-items:center;gap:8px;background:var(--pale);border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:.92rem;color:var(--soft)}
+  .map{margin:12px 0;height:128px;border-radius:14px;position:relative;overflow:hidden;background:
+    linear-gradient(90deg,transparent 48%,#fff 48%,#fff 52%,transparent 52%),
+    linear-gradient(0deg,transparent 40%,#fff 40%,#fff 44%,transparent 44%),
+    linear-gradient(35deg,transparent 60%,#fff 60%,#fff 63%,transparent 63%),
+    #dfe9dc}
+  .map:after{content:"";position:absolute;left:-10%;bottom:-30%;width:70%;height:70%;border-radius:50%;background:#bcd9ee;opacity:.8}
+  .pin{position:absolute;width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#9aa5b8;display:grid;place-items:center;box-shadow:0 3px 6px rgba(0,0,0,.25)}
+  .pin span{transform:rotate(45deg);font-weight:800;font-size:.8rem;color:#fff}
+  .pin.you{background:var(--gold);width:38px;height:38px;z-index:2}
+  .pin.you span{color:var(--navy);font-size:.95rem}
+  .res{display:flex;gap:10px;align-items:center;padding:11px 8px;border-top:1px solid var(--line)}
+  .res .dot{flex:0 0 34px;height:34px;border-radius:9px;background:#e6ebf4;display:grid;place-items:center;font-weight:800;color:var(--soft);font-size:.85rem}
+  .res .n{font-weight:700;font-size:.95rem;line-height:1.25}
+  .res .s{font-size:.8rem;color:var(--soft)}
+  .stars{color:#f5a623;letter-spacing:1px}
+  .res.you{background:#fff7e6;border-radius:12px;border-top-color:transparent}
+  .res.you .dot{background:var(--gold);color:var(--navy)}
+  .call{margin-left:auto;font-size:.8rem;font-weight:700;color:#1a73e8}
+  .badge{margin-left:auto;font-size:.7rem;font-weight:800;background:var(--green);color:#fff;padding:3px 9px;border-radius:99px;white-space:nowrap}
+
+  /* trades strip */
+  .trades{background:var(--pale);border-bottom:1px solid var(--line)}
+  .trades .wrap{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center;padding-top:18px;padding-bottom:18px;font-weight:700;font-size:.95rem;color:var(--soft)}
+  .trades span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--gold);margin-right:9px}
+
+  section{padding:72px 0}
   section.alt{background:var(--pale)}
-  h2{font-size:1.8rem;margin-bottom:14px;line-height:1.2}
-  .lead{color:var(--soft);font-size:1.05rem;max-width:640px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+  .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#b87700;margin-bottom:10px}
+  h2{font-size:clamp(1.65rem,3.8vw,2.2rem);line-height:1.15;letter-spacing:-.015em;max-width:640px}
+  .lead{color:var(--soft);font-size:1.08rem;max-width:620px;margin-top:12px}
+
+  /* before after */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .prof{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;position:relative}
+  .prof.after{border:2px solid var(--gold);box-shadow:0 18px 40px rgba(252,163,17,.18)}
+  .tag{position:absolute;top:-13px;left:20px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px;color:#fff;background:#8a94a8}
+  .after .tag{background:var(--gold);color:var(--navy)}
+  .prof h3{font-size:1.15rem;margin:6px 0 2px}
+  .prof .meta{font-size:.9rem;color:var(--soft);margin-bottom:14px}
+  .rev{background:var(--pale);border-radius:12px;padding:12px 14px;font-size:.9rem;margin-top:10px}
+  .rev b{display:block;margin-bottom:2px}
+  .reply{margin:8px 0 0 12px;padding-left:12px;border-left:3px solid var(--gold);color:var(--ink);font-size:.88rem}
+  .noreply{margin-top:8px;font-size:.82rem;font-weight:700;color:var(--red)}
+  .chk{list-style:none;margin-top:14px;font-size:.92rem}
+  .chk li{padding:6px 0 6px 26px;position:relative;border-top:1px solid var(--line)}
+  .chk li:before{position:absolute;left:0;top:6px;font-weight:800}
+  .before .chk li:before{content:"\2715";color:var(--red)}
+  .after .chk li:before{content:"\2713";color:var(--green)}
+
+  /* six things */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card .num{font-size:2rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:10px}
   .card h3{font-size:1.05rem;margin-bottom:6px}
   .card p{color:var(--soft);font-size:.95rem}
-  .num{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;text-align:center;line-height:28px;font-weight:800;font-size:.9rem;margin-bottom:10px}
-  form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;max-width:620px;margin-top:22px;box-shadow:0 10px 30px rgba(20,33,61,.06)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;counter-reset:s}
+  .step{padding:0 26px 0 0;position:relative}
+  .step:not(:last-child):after{content:"";position:absolute;right:12px;top:22px;width:calc(100% - 70px);height:2px;background:var(--line);left:62px}
+  .step .c{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:1.15rem;position:relative;z-index:1;margin-bottom:14px}
+  .step h3{font-size:1.08rem;margin-bottom:6px}
+  .step p{color:var(--soft);font-size:.95rem}
+
+  /* founder */
+  .who{display:flex;gap:20px;align-items:center;background:var(--navy);color:#fff;border-radius:20px;padding:28px}
+  .who .av{flex:0 0 64px;height:64px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:1.5rem}
+  .who p{color:#c9d3e8;font-size:1rem;margin-top:4px}
+  .who b{font-size:1.1rem}
+
+  /* form */
+  form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;max-width:680px;margin-top:26px;box-shadow:0 18px 40px rgba(20,33,61,.08)}
   label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 6px}
   label span{color:var(--soft);font-weight:500}
-  input,textarea{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;font-size:1rem}
-  input:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  input{width:100%;min-height:48px;padding:12px 14px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;font-size:1rem}
+  input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .fine{color:var(--soft);font-size:.85rem;margin-top:12px}
   .thanks{display:none;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:18px;margin-top:20px;font-weight:600}
-  footer{padding:30px 0;color:var(--soft);font-size:.88rem;border-top:1px solid var(--line)}
-  footer a{color:inherit}
-  @media(max-width:600px){.two{grid-template-columns:1fr}.hero{padding:44px 0 36px}}
+  footer{padding:30px 0 90px;color:var(--soft);font-size:.88rem;border-top:1px solid var(--line)}
+
+  /* mobile sticky bar */
+  .bar{display:none}
+
+  @media(max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;gap:30px}
+    .phone{margin:0 auto}
+    .grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr;gap:26px}
+    .step:not(:last-child):after{display:none}
+    .step{padding:0}
+  }
+  @media(max-width:600px){
+    section{padding:52px 0}
+    .hero{padding:20px 0 44px}
+    .ba,.grid,.two{grid-template-columns:1fr}
+    .who{flex-direction:column;align-items:flex-start}
+    form{padding:20px}
+    header .cta{display:none}
+    .bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+    .bar .cta{width:100%}
+  }
 </style>
 </head>
 <body>
+<div class="top">
 <header><div class="wrap">
   <div class="logo"><i><b></b><b></b><b></b><b></b><b></b><b></b></i>Top Three Local</div>
   <a class="cta" href="#check">Free profile check</a>
 </div></header>
 
 <div class="hero"><div class="wrap">
-  <h1>When someone in your town searches for what you do, be one of the <em>first three</em> they see.</h1>
-  <p>Google shows three businesses in the map box. Most calls go to them. We fix your Google Business Profile and keep it up every month, so the next call is yours, not the shop above you.</p>
-  <a class="cta" href="#check">Get your free profile check</a>
-  <div class="maps">
-    <div class="bar">plumber near me</div>
-    <div class="row"><div><div class="n">Harbor Plumbing &amp; Heating</div><div class="s">4.9 &#9733; (212) &middot; Open now</div></div><span class="grey">Call</span></div>
-    <div class="row you"><div><div class="n">Your business here</div><div class="s">4.8 &#9733; (96) &middot; Open now</div></div><span class="tag">#2</span></div>
-    <div class="row"><div><div class="n">North Shore Drain Pros</div><div class="s">4.7 &#9733; (158) &middot; Open now</div></div><span class="grey">Call</span></div>
+  <div>
+    <span class="kicker">For plumbers, HVAC, roofers, electricians and more</span>
+    <h1>When someone in your town searches for what you do, be one of the <em>first three</em> they see.</h1>
+    <p>Google shows three businesses in the map box. Most calls go to them. We fix your Google Business Profile and keep it up every month, so the next call is yours, not the shop above you.</p>
+    <div class="btns">
+      <a class="cta" href="#check">Get your free profile check</a>
+      <a class="ghost" href="#how">See what we fix &rarr;</a>
+    </div>
+    <div class="proofline"><b>Free, no catch.</b> Your three fixes arrive within one business day, yours to keep.</div>
+  </div>
+  <div class="phone" aria-hidden="true">
+    <div class="search">&#128269; plumber near me</div>
+    <div class="map">
+      <div class="pin" style="left:18%;top:42%"><span>1</span></div>
+      <div class="pin you" style="left:46%;top:22%"><span>2</span></div>
+      <div class="pin" style="left:72%;top:48%"><span>3</span></div>
+    </div>
+    <div class="res"><div class="dot">1</div><div><div class="n">Harbor Plumbing &amp; Heating</div><div class="s"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.9 (212) &middot; Open now</div></div><span class="call">Call</span></div>
+    <div class="res you"><div class="dot">2</div><div><div class="n">Your business</div><div class="s"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 (96) &middot; Open now</div></div><span class="badge">TOP 3</span></div>
+    <div class="res"><div class="dot">3</div><div><div class="n">North Shore Drain Pros</div><div class="s"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.7 (158) &middot; Open now</div></div><span class="call">Call</span></div>
   </div>
 </div></div>
+</div>
 
-<section class="alt" id="how"><div class="wrap">
-  <h2>What costs you calls, in plain sight</h2>
-  <p class="lead">We read your profile the way a customer does. The same six things come up almost every time.</p>
+<div class="trades"><div class="wrap">
+  <span>Plumbing</span><span>HVAC</span><span>Roofing</span><span>Electrical</span><span>Landscaping</span><span>Garage doors</span><span>Pest control</span><span>Auto repair</span>
+</div></div>
+
+<section id="how"><div class="wrap">
+  <div class="eyebrow">What changes</div>
+  <h2>Same business. Two very different profiles.</h2>
+  <p class="lead">Customers decide in about ten seconds. This is what they see when they open yours.</p>
+  <div class="ba">
+    <div class="prof before"><span class="tag">Before</span>
+      <h3>Your business today</h3><div class="meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;</span> 4.6 &middot; 16 reviews</div>
+      <div class="rev"><b>&ldquo;Showed up late and never called back.&rdquo;</b>2 months ago<div class="noreply">No reply from the owner</div></div>
+      <ul class="chk"><li>One line in the description</li><li>Services listed with no detail</li><li>Newest photo from years ago</li></ul>
+    </div>
+    <div class="prof after"><span class="tag">After</span>
+      <h3>Your business, kept up</h3><div class="meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 &middot; reviews answered</div>
+      <div class="rev"><b>&ldquo;Showed up late and never called back.&rdquo;</b>2 months ago<div class="reply">Sorry about that. We have fixed how we schedule. Please call us directly and we will make it right.</div></div>
+      <ul class="chk"><li>Full description: who, where, what you are known for</li><li>Every service carries a sentence</li><li>Fresh before and after job photos</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="eyebrow">What costs you calls</div>
+  <h2>Six things, almost every time</h2>
+  <p class="lead">We read your profile the way a customer does. The same six come up again and again.</p>
   <div class="grid">
-    <div class="card"><span class="num">1</span><h3>Reviews nobody answered</h3><p>The newest review is the first one people read. If the owner never replied, that is what they remember.</p></div>
-    <div class="card"><span class="num">2</span><h3>No new reviews in months</h3><p>Google and customers both read a quiet profile as a quiet business, even when your crews are flat out.</p></div>
-    <div class="card"><span class="num">3</span><h3>A description that says nothing</h3><p>Who you are, where you work, what you are known for. Most profiles have one line or none.</p></div>
-    <div class="card"><span class="num">4</span><h3>Services with no detail</h3><p>Each service you list can carry a sentence. Almost none do, and Google uses them to decide who to show.</p></div>
-    <div class="card"><span class="num">5</span><h3>Photos from years ago</h3><p>Fifteen to twenty real job photos, before and after, do more than any ad. Phone pictures are fine.</p></div>
-    <div class="card"><span class="num">6</span><h3>A website link that is broken</h3><p>We have seen a profile send customers to a page that no longer exists. Nobody at the company knew.</p></div>
+    <div class="card"><div class="num">01</div><h3>Reviews nobody answered</h3><p>The newest review is the first one people read. If the owner never replied, that is what they remember.</p></div>
+    <div class="card"><div class="num">02</div><h3>No new reviews in months</h3><p>Google and customers both read a quiet profile as a quiet business, even when your crews are flat out.</p></div>
+    <div class="card"><div class="num">03</div><h3>A description that says nothing</h3><p>Who you are, where you work, what you are known for. Most profiles have one line or none.</p></div>
+    <div class="card"><div class="num">04</div><h3>Services with no detail</h3><p>Each service you list can carry a sentence. Almost none do, and Google uses them to decide who to show.</p></div>
+    <div class="card"><div class="num">05</div><h3>Photos from years ago</h3><p>Fifteen to twenty real job photos, before and after, do more than any ad. Phone pictures are fine.</p></div>
+    <div class="card"><div class="num">06</div><h3>A website link that is broken</h3><p>We have seen a profile send customers to a page that no longer exists. Nobody at the company knew.</p></div>
   </div>
 </div></section>
 
 <section id="offer"><div class="wrap">
-  <h2>How it works</h2>
-  <div class="grid">
-    <div class="card"><h3>Free check, within one business day</h3><p>Tell us your business below. We send back the three things costing you calls, in the order to fix them. Yours to keep, whatever you decide.</p></div>
-    <div class="card"><h3>Do it yourself, or we do it</h3><p>Everything on the list can be done in an afternoon. If you would rather run your business, we do it for you this week and keep it up every month.</p></div>
-    <div class="card"><h3>Month to month, cancel any time</h3><p>The first fix is free on every plan. Setup takes you two minutes: add us as a manager on your profile and send whatever job photos you have.</p></div>
+  <div class="eyebrow">How it works</div>
+  <h2>Three steps. The first one is free.</h2>
+  <div class="steps">
+    <div class="step"><div class="c">1</div><h3>Free check, within one business day</h3><p>Tell us your business below. We send back the three things costing you calls, in the order to fix them. Yours to keep, whatever you decide.</p></div>
+    <div class="step"><div class="c">2</div><h3>Do it yourself, or we do it</h3><p>Everything on the list can be done in an afternoon. If you would rather run your business, we do it for you this week and keep it up every month.</p></div>
+    <div class="step"><div class="c">3</div><h3>Month to month, cancel any time</h3><p>The first fix is free on every plan. Setup takes you two minutes: add us as a manager on your profile and send whatever job photos you have.</p></div>
   </div>
 </div></section>
 
-<section class="alt" id="check"><div class="wrap">
+<section class="alt"><div class="wrap">
+  <div class="who"><div class="av">A</div><div><b>Run by Ace Jonas, Sea Cliff, NY</b><p>A real person reads every request and writes every check. Email me directly at ace@topthreelocal.com.</p></div></div>
+</div></section>
+
+<section id="check"><div class="wrap">
+  <div class="eyebrow">Free, in one business day</div>
   <h2>Get your free profile check</h2>
-  <p class="lead">Takes a minute. We reply within one business day with your three fixes.</p>
+  <p class="lead">Takes a minute. We reply with your three fixes.</p>
   <form action="https://formsubmit.co/7d27c7607f3c6fb84114baef98032f46" method="POST">
     <input type="hidden" name="_subject" value="Top Three Local: free profile check request">
     <input type="hidden" name="_template" value="table">
@@ -126,6 +261,7 @@
 <footer><div class="wrap">
   Top Three Local is run by Ace Jonas &middot; 7 Littleworth Lane, Sea Cliff, NY 11579 &middot; <a href="mailto:ace@topthreelocal.com">ace@topthreelocal.com</a>
 </div></footer>
+<div class="bar"><a class="cta" href="#check">Get my free profile check</a></div>
 <script>
   var f=document.querySelector("form");f._next.value=location.href.split("?")[0].split("#")[0]+"?sent=1#check";
   if(location.search.indexOf("sent=1")>-1){document.getElementById("thanks").style.display="block";}
