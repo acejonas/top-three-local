@@ -233,6 +233,7 @@
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_autoresponse" value="Thanks, we have your business. Your free profile check, the three things costing you calls in the order to fix them, arrives within one business day. Top Three Local, 7 Littleworth Lane, Sea Cliff, NY 11579">
     <input type="hidden" name="_next" value="">
+    <input type="hidden" name="came_from" value="direct">
     <input type="text" name="_honey" style="display:none">
     <div class="two">
       <div><label for="biz">Business name</label><input id="biz" name="business" required placeholder="Harbor Plumbing &amp; Heating"></div>
@@ -261,6 +262,7 @@
 <script>
   var f=document.querySelector("form");f._next.value=location.href.split("?")[0].split("#")[0]+"?sent=1#check";
   if(location.search.indexOf("sent=1")>-1){document.getElementById("thanks").style.display="block";}
+  (function(){try{var q=new URLSearchParams(location.search),k=q.get("utm_content")||q.get("ref");if(k)sessionStorage.setItem("cf",(q.get("utm_source")||"")+"/"+k);var v=sessionStorage.getItem("cf");if(v)document.querySelector("form").came_from.value=v;}catch(e){}})();
 </script>
 </body>
 </html>
